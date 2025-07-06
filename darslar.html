@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darslar | Hakkerlik sirlari</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header, nav, footer {
+            background-color: #161b22;
+            text-align: center;
+            padding: 20px;
+        }
+        nav ul { list-style: none; padding: 0; }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #1f6feb;
+        }
+        main {
+            padding: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 40px;
+            background-color: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 { color: #58a6ff; }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            margin-top: 15px;
+        }
+
+        #modeToggle {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #21262d;
+            color: #58a6ff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #modeToggle:hover {
+            background-color: #30363d;
+        }
+
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        body.light-mode header,
+        body.light-mode nav,
+        body.light-mode footer,
+        body.light-mode section {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        body.light-mode nav ul li a {
+            color: #0066cc;
+        }
+
+        body.light-mode nav ul li a:hover {
+            color: #003366;
+        }
+
+        body.light-mode #modeToggle {
+            background-color: #e0e0e0;
+            color: #000;
+        }
+
+        @media (max-width: 600px) {
+            iframe { height: 200px; }
+            nav ul li { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 Darslar – Xakerlik Uzbekcha</h1>
+        <p>Etik hakerlik bo‘yicha Uzbek tilidagi amaliy darslar</p>
+        <button id="modeToggle">🌙 Rejimni o‘zgartirish</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Bosh sahifa</a></li>
+            <li><a href="darslar.html">Darslar</a></li>
+            <li><a href="kiberxavfsizlik.html">Kiberxavfsizlik</a></li>
+            <li><a href="xavfsizlik-qoidalari.html">Xavfsizlik qoidalari</a></li>
+            <li><a href="qollanma.html">Qo‘llanmalar</a></li>
+            <li><a href="boglanish.html">Bog‘lanish</a></li>
+            <li><a href="yangiliklar.html">Yangiliklar</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>1. Ethical Hacking nima?</h2>
+            <p>Ushbu darsda MohirDev bizga “Ethical Hacking” haqida umumiy tushuncha beradi: nima, kimlar ehtik xaker va xavfsizlikni qanday saqlash kerak.</p>
+            <iframe src="https://www.youtube.com/embed/8U3KXxZ8jpc" allowfullscreen></iframe>
+        </section>
+
+        <section>
+            <h2>2. O‘zbekiston qonunchiligi doirasida ethical hacking</h2>
+            <p>Qanday amaliyotlar qonun doirasida, va qaysi harakatlar qonuniy jazoga sabab bo‘lishi mumkinligi haqida video.</p>
+            <iframe src="https://www.youtube.com/embed/TQEIq2mfNWs" allowfullscreen></iframe>
+        </section>
+
+        <section>
+            <h2>3. Kiberxavfsizlik: Ethical Hacking darslari</h2>
+            <p>Bu darsda siz kiberxavfsizlik asoslari va etik xakerlikni qanday o‘rganish kerakligini ko‘rishingiz mumkin.</p>
+            <iframe src="https://www.youtube.com/embed/vmCyoagoXbM" allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hakkerlik sirlari. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            alert("Darslar sahifasiga xush kelibsiz! 📹");
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+            }
+
+            const modeToggleBtn = document.getElementById('modeToggle');
+            if (modeToggleBtn) {
+                modeToggleBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('light-mode');
+                    const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+                    localStorage.setItem('theme', currentTheme);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
